@@ -1,0 +1,1 @@
+<!-- Responsável: Breno | Etapa F - resultados e entrega | O que faz: documenta o projeto (descrição das implementações, compilação e execução); cada integrante escreve a sua parte -->
