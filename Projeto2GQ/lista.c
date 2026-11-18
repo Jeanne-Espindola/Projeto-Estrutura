@@ -36,12 +36,12 @@
             return 0;
     }
 
-    Elem* no = malloc(sizeof(struct elem));
+    Elem* no = malloc(sizeof(Elem));
     if(no == NULL){
         return 0;
     }
 
-    no->valor = dado;
+    no->dado = dado;
     no->prox = li->inicio;
     li->qtd++;
     return 1;
@@ -77,7 +77,7 @@ int qtd_elementos(Lista li){
 
 void destruir(Lista li){
     if(li == NULL){
-        return 0;
+        return;
     }
 
     Elem* aux = li->inicio;

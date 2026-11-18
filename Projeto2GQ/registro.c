@@ -5,6 +5,9 @@
  */
 #include "registro.h"
 
+
+#include <stdio.h>
+
  void imprimir_registro(Registro *r){
     if(r == NULL){
         return;

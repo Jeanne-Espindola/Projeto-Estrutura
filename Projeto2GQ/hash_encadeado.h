@@ -4,7 +4,8 @@
  * O que faz: Implementa a tabela hash com encadeamento separado (listas nas posições), com tamanho fixo, contagem de colisões, quantidade de elementos e tamanho para o fator de carga.
  */
 
-
+   #include "registro.h"
+   #include "hash_funcoes.h"
     #ifndef HASH_ENCADEADO_H
     #define HASH_ENCADEADO_H
 

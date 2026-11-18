@@ -15,12 +15,12 @@ struct hash_encadeado{
     int qtd;
     int colisoes;
     FuncaoHash funcao;
-}
+};
 
 HashEncadeado criar_hash_encadeado(int tamanho, FuncaoHash funcao){
-    HashEncadeado h = malloc(sizeof(struct HashEncadeado));
+    HashEncadeado h = malloc(sizeof(struct hash_encadeado));
     if(h != NULL){
-        h->posicoes = malloc(tamanho * sizeof(struct lista));
+        h->posicoes = malloc(tamanho * sizeof(Lista));
         if(h->posicoes == NULL){
             free(h);
             return NULL;
@@ -28,7 +28,7 @@ HashEncadeado criar_hash_encadeado(int tamanho, FuncaoHash funcao){
 
         int i;
         for(i = 0; i < tamanho; i++){
-            h[i]->posicoes = NULL;
+            h->posicoes[i] = NULL;
         }
 
         h->tamanho = tamanho;
@@ -75,26 +75,32 @@ int inserir_hash_encadeado(HashEncadeado h, Registro* dado){
 
 
 
+int colisoes_hash_encadeado(HashEncadeado h){
+    if(h == NULL){
+        return 0;
+    }
+    return h->colisoes;
+}
 
 
 
 
 
-void zerar_colisoes_hash_aberto(HashAberto ha){
+void zerar_colisoes_hash_encadeado(HashEncadeado ha){
     if(ha == NULL){
         return;
     }
     ha->colisoes = 0;
 }
 
-int qtd_elementos_hash_aberto(HashAberto ha){
+int qtd_elementos_hash_encadeado(HashEncadeado ha){
     if(ha == NULL){
         return 0;
     }
     return ha->qtd;
 }
 
-int tamanho_hash_aberto(HashAberto ha){
+int tamanho_hash_encadeado(HashEncadeado ha){
     if(ha == NULL){
         return 0;
     }
@@ -103,6 +109,23 @@ int tamanho_hash_aberto(HashAberto ha){
 
 
 //destruir
+
+
+
+void destruir_hash_encadeado(HashEncadeado h){
+    if(h == NULL){
+        return;
+    }
+
+    int i;
+    for(i = 0; i < h->tamanho; i++){
+        if(h->posicoes[i] != NULL){
+            destruir(h->posicoes[i]);
+        }
+    }
+    free(h->posicoes);
+    free(h);
+}
 
 
 
