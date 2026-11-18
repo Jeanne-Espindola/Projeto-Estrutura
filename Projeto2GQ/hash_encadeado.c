@@ -67,7 +67,42 @@ int inserir_hash_encadeado(HashEncadeado h, Registro* dado){
     return 0;
 }
 
+//buscar
 
+
+
+
+
+
+
+
+
+
+
+
+void zerar_colisoes_hash_aberto(HashAberto ha){
+    if(ha == NULL){
+        return;
+    }
+    ha->colisoes = 0;
+}
+
+int qtd_elementos_hash_aberto(HashAberto ha){
+    if(ha == NULL){
+        return 0;
+    }
+    return ha->qtd;
+}
+
+int tamanho_hash_aberto(HashAberto ha){
+    if(ha == NULL){
+        return 0;
+    }
+    return ha->tamanho;
+}
+
+
+//destruir
 
 
 
