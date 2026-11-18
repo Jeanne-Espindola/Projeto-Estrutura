@@ -112,21 +112,6 @@ int tamanho_hash_encadeado(HashEncadeado ha){
 
 
 
-void destruir_hash_encadeado(HashEncadeado h){
-    if(h == NULL){
-        return;
-    }
-
-    int i;
-    for(i = 0; i < h->tamanho; i++){
-        if(h->posicoes[i] != NULL){
-            destruir(h->posicoes[i]);
-        }
-    }
-    free(h->posicoes);
-    free(h);
-}
-
 
 
 
