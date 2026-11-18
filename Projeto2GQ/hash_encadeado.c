@@ -20,7 +20,7 @@ struct hash_encadeado{
 HashEncadeado criar_hash_encadeado(int tamanho, FuncaoHash funcao){
     HashEncadeado h = malloc(sizeof(struct HashEncadeado));
     if(h != NULL){
-        h->posicoes = malloc(tamanho * sizeof(Lista));
+        h->posicoes = malloc(tamanho * sizeof(struct lista));
         if(h->posicoes == NULL){
             free(h);
             return NULL;
@@ -38,5 +38,37 @@ HashEncadeado criar_hash_encadeado(int tamanho, FuncaoHash funcao){
     }
     return h;
 }
+
+int inserir_hash_encadeado(HashEncadeado h, Registro* dado){
+    if(h == NULL || dado == NULL){
+        return 0;
+    }
+
+    int pos = h->funcao(dado->matricula, h->tamanho);
+
+    if(h->posicoes[pos] == NULL){
+
+        h->posicoes[pos] = criar_lista(); 
+
+        if(h->posicoes[pos] == NULL){
+            return 0;
+        }
+    }
+
+    else{
+        h->colisoes++;
+    }
+
+    if(inserir_inicio(h->posicoes[pos], dado)){
+        h->qtd++;
+        return 1;
+    }
+
+    return 0;
+}
+
+
+
+
 
 
