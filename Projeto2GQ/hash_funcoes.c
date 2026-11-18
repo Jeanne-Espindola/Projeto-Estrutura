@@ -5,7 +5,7 @@ int FuncaoHash(int chave, int TABLE_SIZE){
     return (chave & 0x7FFFFFFF) % TABLE_SIZE;
 }
 
-int Func_Hash_Dobra(int chave, int TABLE_SIZE){
+int FuncHashDobra(int chave, int TABLE_SIZE){
     int parte_1 = chave / 100;
     int parte_2 = chave % 100;
     int soma = (parte_1 + parte_2);
