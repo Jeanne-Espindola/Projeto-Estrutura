@@ -5,7 +5,6 @@
  */
 
     #ifndef LISTA_H
-    #ifndef LISTA_H
     #define LISTA_H
 
     #include "registro.h"
@@ -17,7 +16,5 @@
     Registro* buscar_matricula(Lista li, int matricula);
     int qtd_elementos(Lista li);
     void destruir(Lista li);
-
-#endif
 
     #endif
