@@ -4,7 +4,7 @@
 
 struct hash_aberto {
     Registro **posicoes;        
-    unsigned char *inicial;    
+    char *inicial;    
     int tamanho;               
     int qtd;                    
     int colisoes;               
@@ -22,7 +22,7 @@ HashAberto criar_hash_aberto(int tamanho, FuncHashAbertoPtr funcao){
     }
 
     h->posicoes = calloc(tamanho, sizeof(Registro *));
-    h->inicial = calloc(tamanho, sizeof(unsigned char));
+    h->inicial = calloc(tamanho, sizeof(char));
     if(h->posicoes == NULL || h->inicial == NULL){
         free(h->posicoes);
         free(h->inicial);
