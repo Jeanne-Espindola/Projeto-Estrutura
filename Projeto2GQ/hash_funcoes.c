@@ -1,17 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int FuncaoHash(int chave, int TABLE_SIZE){
+int FuncaoHashDiv(int chave, int TABLE_SIZE){
     return (chave & 0x7FFFFFFF) % TABLE_SIZE;
 }
 
 int FuncHashDobra(int chave, int TABLE_SIZE){
-    int parte_1 = chave / 100;
-    int parte_2 = chave % 100;
-    int soma = (parte_1 + parte_2);
-    while(soma > TABLE_SIZE){
-        soma = (soma/10) + (soma % 10);
+    if (TABLE_SIZE <= 0){
+        return 0;
+    }
+    int k = chave & 0x7FFFFFFF;
+    int soma = 0;
+
+    while(k > 0){
+        soma += k % 10000;
+        k /= 10000;
 
     }
-    return soma % TABLE_SIZE;
+    return (soma * 17) % TABLE_SIZE;
 }
