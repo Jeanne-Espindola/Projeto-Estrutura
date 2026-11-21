@@ -1,10 +1,4 @@
-/*
- * Responsável: Jeanne
- * Etapa A - base e estrutura linear
- * O que faz: Implementa a estrutura linear (lista encadeada) com criar, inserir, buscar e liberar, como TAD.
- */
-
-    #ifndef LISTA_H
+   #ifndef LISTA_H
     #define LISTA_H
 
     #include "registro.h"

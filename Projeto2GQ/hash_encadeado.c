@@ -1,8 +1,3 @@
-/*
- * Responsável: Jeanne
- * Etapa D - hash com encadeamento separado
- * O que faz: Implementa a tabela hash com encadeamento separado (listas nas posições), com tamanho fixo, contagem de colisões, quantidade de elementos e tamanho para o fator de carga.
- */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -67,12 +62,21 @@ int inserir_hash_encadeado(HashEncadeado h, Registro* dado){
     return 0;
 }
 
-//buscar
 
 
+Registro* buscar_hash_encadeado(HashEncadeado h, int matricula){
+    if(h == NULL){
+        return NULL;
+    }
 
+    int pos = h->funcao(matricula, h->tamanho);
 
+    if(h->posicoes[pos] == NULL){
+        return NULL;
+    }
 
+    return buscar_matricula(h->posicoes[pos], matricula);
+}
 
 
 int colisoes_hash_encadeado(HashEncadeado h){
@@ -108,7 +112,22 @@ int tamanho_hash_encadeado(HashEncadeado ha){
 }
 
 
-//destruir
+
+void destruir_hash_encadeado(HashEncadeado h){
+    if(h == NULL){
+        return;
+    }
+
+    int i;
+    for(i = 0; i < h->tamanho; i++){
+        if(h->posicoes[i] != NULL){
+            destruir(h->posicoes[i]);
+        }
+    }
+
+    free(h->posicoes);
+    free(h);
+}
 
 
 

@@ -1,9 +1,3 @@
-/*
- * Responsável: Jeanne
- * Etapa A - base e estrutura linear
- * O que faz: Implementa a estrutura linear (lista encadeada) com criar, inserir, buscar e liberar, como TAD.
- */
-
     #include <stdio.h>
     #include <stdlib.h>
     #include "lista.h"
@@ -43,11 +37,11 @@
 
     no->dado = dado;
     no->prox = li->inicio;
+    li->inicio = no;
     li->qtd++;
     return 1;
 }
 
-//buscar
 
 Registro* buscar_matricula(Lista li, int matricula){
     if(li == NULL){
