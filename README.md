@@ -66,16 +66,12 @@ gcc -O2 main.c registro.c leitura.c lista.c hash_encadeado.c hash_aberto.c hash_
 
 ## Como executar
 
-Coloque o arquivo da base na mesma pasta do programa. **[CONFERIR: nome do arquivo da base e se o programa recebe o nome por argumento]**
+Coloque o arquivo da base na mesma pasta do programa.
 
 ```
 .\programa.exe        (Windows / PowerShell)
 ./programa            (Linux / macOS)
 ```
-
-## Resultados
-
-Os resultados dos experimentos (tabelas de tempos de inserção e busca, colisões e fator de carga para os três volumes e os três níveis de preenchimento) estão na pasta `resultados/` e nos slides da apresentação. **[CONFERIR]**
 
 ## Observações
 
