@@ -27,7 +27,7 @@ Registro *ler_base(char *nome_arquivo, int limite, int *total_lido){
 
     while(i < limite && fgets(linha, 512, arquivo) != NULL){
 
-        if(sscanf(linha, "%d;%99[^;],%99[^\r\n]", &registros[i].matricula, registros[i].nome,registros[i].curso) == 3){
+        if(sscanf(linha, "%d;%99[^;];%99[^\r\n]", &registros[i].matricula, registros[i].nome,registros[i].curso) == 3){
 
             i++;
         }
