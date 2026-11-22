@@ -13,7 +13,7 @@ Comparação de desempenho entre três estruturas de dados nas operações de **
 | Estrutura | Arquivos | Descrição |
 |---|---|---|
 | Lista unicamente encadeada | `lista.h` / `lista.c` | Estrutura linear. Inserção sempre no início (O(1)) e busca sequencial (O(n)). |
-| Tabela hash com endereçamento aberto | `hash_aberto.h` / `hash_aberto.c` | Trata colisões por sondagem. **[CONFERIR: sondagem usada (linear, quadrática ou dupla)]** |
+| Tabela hash com endereçamento aberto | `hash_aberto.h` / `hash_aberto.c` | Trata colisões por sondagem. |
 | Tabela hash com encadeamento separado | `hash_encadeado.h` / `hash_encadeado.c` | Cada posição da tabela guarda uma lista encadeada. Colisões são inseridas na lista da própria posição. |
 
 ## Funções hash
